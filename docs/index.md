@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to leleshuo website
 
 You can use the [editor on GitHub](https://github.com/leleshuo/Node-egg-mongoDb/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
