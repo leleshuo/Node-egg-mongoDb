@@ -3,11 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <title>欢迎来到乐乐说</title>
-    <!-- 引入样式 -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
     />
+    <link
+    rel="stylesheet"
+    href="/public/admin/css/common.css"
+  />
+  <link
+    rel="stylesheet"
+    href="/public/admin/css/index.css"
+  />
     <!-- 引入组件库 -->
   </head>
   <body>
@@ -104,229 +111,13 @@
     </div>
   </body>
 </html>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  .login {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    height: 100%;
-    background-color: #0d1d30;
-    position: relative;
-  }
-  .main {
-    position: relative;
-    width: 940px;
-    height: 495px;
-    background: #19293b;
-    border-radius: 12px;
-    -webkit-box-shadow: 0px 2px 12px 0px #091727;
-    box-shadow: 0px 2px 12px 0px #091727;
-    color: white;
-  }
-  .main .img1 {
-    position: absolute;
-    top: 46px;
-    left: 53px;
-    width: 140px;
-  }
-  .main .img2 {
-    position: absolute;
-    top: 63px;
-    left: 132px;
-    width: 348px;
-    height: 299px;
-  }
-  .main h3 {
-    margin-left: 52px;
-    margin-top: 383px;
-    margin-bottom: 0;
-    font-size: 32px;
-  }
-  .main h4 {
-    margin-left: 52px;
-    font-size: 20px;
-    margin-top: 16px;
-  }
-  .main .login-form {
-    position: absolute;
-    right: 0;
-    top: 0;
-    border-radius: 6px;
-    background: #ffffff;
-    width: 299px;
-    height: 495px;
-    padding: 58px 33px 33px 33px;
-  }
-  .main .login-form .title {
-    width: 85px;
-    font-size: 20px;
-    margin: 0px auto 62px auto;
-    border-bottom: 3px #1b4a7f ridge;
-    text-align: center;
-    color: #333333;
-    padding-bottom: 8px;
-  }
-  .main .login-form .el-input {
-    height: 32px;
-  }
-  .main .login-form .el-input input:focus {
-    color: #0668b9;
-  }
-  .main .login-form .el-input input {
-    outline: none;
-    height: 38px;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-radius: 0;
-  }
-  .main .login-form .color-class {
-    color: #0668b9;
-  }
-  .main .login-form .input-icon {
-    height: 39px;
-    width: 19px;
-    margin-left: 2px;
-  }
-  .login-code {
-    position: absolute;
-    width: 88px;
-    height: 32px;
-    right: 0;
-    bottom: 8px;
-  }
-  .login-code img {
-    width: 88px;
-    height: 32px;
-    cursor: pointer;
-    vertical-align: middle;
-  }
-  .el-login-footer {
-    height: 40px;
-    line-height: 40px;
-    position: absolute;
-    -webkit-transform: translateY(273px);
-    transform: translateY(273px);
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    font-family: Arial;
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
-  .el-login-footer span img {
-    height: 12px;
-  }
-  .don-login-box {
-    background-color: #f1f7fe;
-    width: 100%;
-  }
-  .don-login-box .login-bg {
-    height: 100vh;
-    background-image: url(/public/admin/images/login_bg.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-  .don-login-box .login-box {
-    background-color: #1d406c;
-    height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-  .don-login-box .login-box .login-title {
-    color: #ffffff;
-    text-align: center;
-  }
-  .don-login-box .login-box .login-form {
-    border-radius: 2px;
-    background: #ffffff;
-    width: 330px;
-    height: 495px;
-    margin-top: 30px;
-    padding: 58px 33px 33px 33px;
-  }
-  .don-login-box .login-box .login-form .title {
-    color: #1d406c;
-    font-size: 20px;
-    margin: 0px auto 62px auto;
-    border-bottom: 1px solid #dcdfe5;
-    text-align: center;
-    padding-bottom: 8px;
-  }
-  .don-login-box .login-box .login-form .el-input {
-    height: 32px;
-  }
-  .don-login-box .login-box .login-form .el-input input:focus {
-    color: #0668b9;
-  }
-  .don-login-box .login-box .login-form .el-input input {
-    outline: none;
-    height: 38px;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-radius: 0;
-  }
-  .don-login-box .login-box .login-form .color-class {
-    color: #0668b9;
-  }
-  .don-login-box .login-box .login-form .input-icon {
-    height: 39px;
-    width: 19px;
-    margin-left: 2px;
-  }
-  .don-login-box .login-box .login-form .login-tip {
-    margin-top: 30px;
-    color: #999999;
-    font-size: 10px;
-  }
-  .don-login-box .login-box .login-bottom {
-    padding-top: 40px;
-    width: 350px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-  }
-  .don-login-box .login-box .login-bottom .circular-box {
-    width: 108px;
-    line-height: 0.8;
-  }
-  .don-login-box .login-box .login-bottom .circular-box .circular {
-    display: inline-block;
-    background-color: #ffffff;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    margin: 0 3px;
-  }
-</style>
 <script type="text/javascript" src="/public/admin/js/vue.js"></script>
+<script type="text/javascript" src="/public/admin/js/jsencode.js"></script>
+<script type="text/javascript" src="/public/admin/js/jsencrypt.js"></script>
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 <script>
+// import {encrypt } from '/public/admin/js/jsencode.js'
   new Vue({
     el: '#app',
     data: {
@@ -353,6 +144,7 @@
       loading: false,
       redirect: undefined,
     },
+    created(){this.getCookie();},
     methods: {
       getCode() {
         getCodeImg().then((res) => {
