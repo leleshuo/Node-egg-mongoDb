@@ -3,3 +3,6 @@
 
 1、下载项目运行 npm install
 2、npm run dev 运行项目
+
+交流学习群
+![微信图片_20210506151528](https://user-images.githubusercontent.com/68006069/117257169-2aac9d80-ae7e-11eb-9d10-6dcc6c2cf56f.jpg)
