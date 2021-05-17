@@ -5,5 +5,4 @@
 2、npm run dev 运行项目
 
 交流学习群
-
-<div style="width:100px;height:100px">![微信图片_20210506151528](https://user-images.githubusercontent.com/68006069/117257169-2aac9d80-ae7e-11eb-9d10-6dcc6c2cf56f.jpg)</div>
+![微信图片_20210506151528](https://user-images.githubusercontent.com/68006069/117257169-2aac9d80-ae7e-11eb-9d10-6dcc6c2cf56f.jpg)
