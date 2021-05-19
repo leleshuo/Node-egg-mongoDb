@@ -6,6 +6,7 @@
     "declarations": true
   },
   "dependencies": {
+    "@alicloud/sms-sdk": "^1.1.6",
     "cheerio": "^1.0.0-rc.6",
     "egg": "^2.15.1",
     "egg-mongo-native": "^3.5.0",
@@ -16,7 +17,19 @@
     "koa-jsonp": "^2.0.2",
     "mongoose": "^5.12.4",
     "silly-datetime": "^0.1.2",
-    "svg-captcha": "^1.4.0"
+    "svg-captcha": "^1.4.0",
+    "alipay-mobile": "^2.2.7",
+    "crypto": "^1.0.1",
+    "egg-mongoose": "^3.1.0",
+    "egg-redis": "^2.0.0",
+    "jimp": "^0.5.3",
+    "koa-xml-body": "^2.1.0",
+    "md5": "^2.2.1",
+    "mz-modules": "^2.1.0",
+    "qr-image": "^3.2.0",
+    "request": "^2.88.0",
+    "showdown": "^1.9.0",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "autod": "^3.0.1",

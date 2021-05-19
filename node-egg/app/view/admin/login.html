@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>欢迎来到乐乐说</title>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
-    />
-    <link
-    rel="stylesheet"
-    href="/public/admin/css/common.css"
-  />
-  <link
-    rel="stylesheet"
-    href="/public/admin/css/index.css"
-  />
-    <!-- 引入组件库 -->
-  </head>
+<%- include ./public/support.html %>
   <body>
     <div id="app">
       <template>
@@ -31,9 +13,6 @@
               class="login-bg"
               >&nbsp;&nbsp;</el-col
             >
-            <!--<el-col :xl="{span: 6,offset:18}" :lg="{span:8,offset:16}" :md="{span:10,offset:14}" :sm="{span:14,offset:10}"
-					  :xs="{span:24,offset:0}"
-					  class="login-box">-->
             <el-col
               :xl="{ span: 6, offset: 0 }"
               :lg="{ span: 8, offset: 0 }"
@@ -43,7 +22,7 @@
               class="login-box"
             >
               <div class="login-title">
-                <h1>乐乐说-Node.js后台管理系统</h1>
+                <h1>leleshuo-后台管理系统</h1>
               </div>
               <el-form
                 ref="loginForm"
@@ -53,20 +32,18 @@
               >
                 <div class="title">用户登陆</div>
                 <el-form-item prop="username">
-                  <el-input
-                    v-model="loginForm.username"
-                    type="text"
-                    auto-complete="off"
-                    @focus="isUsername = true"
-                    @blur="isUsername = false"
-                    placeholder="用户名"
-                  >
-                    <img
-                      src="/public/admin/images/user.svg"
-                      v-bind:class="{ 'color-class': isUsername }"
-                      class="input-icon"
-                    ></img>
-                  </el-input>
+                 
+                      <el-input
+                      v-model="loginForm.username"
+                      type="text"
+                      auto-complete="off"
+                      @focus="isUsername = true"
+                      @blur="isUsername = false"
+                      placeholder="用户名"
+                    >
+                    <i slot="suffix" class="el-input__icon el-icon-user-solid"></i>
+
+                    </el-input>
                 </el-form-item>
                 <el-form-item prop="password">
                   <el-input
@@ -78,6 +55,7 @@
                     @blur="isPassword = false"
                     @keyup.enter.native="handleLogin"
                   >
+                  <i slot="suffix" class="el-input__icon el-icon-view"></i>
                   </el-input>
                 </el-form-item>
                 <el-form-item style="width: 100%; margin-top: 25px">
@@ -92,9 +70,14 @@
                     <span v-else>登 录 中...</span>
                   </el-button>
                 </el-form-item>
-                <el-checkbox v-model="loginForm.rememberMe"
-                  >记住密码</el-checkbox
-                >
+                <el-row >
+                  <el-col :span="18">
+                    <el-checkbox v-model="loginForm.rememberMe">记住密码</el-checkbox>
+                  </el-col>
+                  <el-col :span="6">
+                     <a  href="/register"><span class="resgister">还没有账号？</span></a>
+                  </el-col>
+                </el-row>
                 <div class="login-tip">
                   温馨提示：请使用Chrome，IE7.0及以上版本.
                 </div>
@@ -111,11 +94,6 @@
     </div>
   </body>
 </html>
-<script type="text/javascript" src="/public/admin/js/vue.js"></script>
-<script type="text/javascript" src="/public/admin/js/jsencode.js"></script>
-<script type="text/javascript" src="/public/admin/js/jsencrypt.js"></script>
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 <script>
 // import {encrypt } from '/public/admin/js/jsencode.js'
   new Vue({
@@ -182,18 +160,39 @@
               Cookies.remove('password')
               Cookies.remove('rememberMe')
             }
-            this.$store
-              .dispatch('Login', this.loginForm)
-              .then(() => {
-                this.$router.push({ path: this.redirect || '/' })
+            axios.post('/pass/doLogin',{
+              username: this.loginForm.username,
+              password: this.loginForm.password
               })
-              .catch(() => {
-                this.loading = false
-                this.getCode()
-              })
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
           }
         })
       },
+      register(){
+        this.$router.push({path: "register", query: 'query'})
+      }
     },
   })
 </script>
+<style>
+  a{ text-decoration:none;font-size: 12px;
+    color:rgba(35, 48, 168, 0.438);
+    cursor: pointer;} ;
+  .resgister{
+    font-size: 12px;
+    color:rgba(35, 48, 168, 0.438);
+    cursor: pointer;
+  }
+  .el-button--primary{
+    background-color: #1D406C;
+    border-color: #1D406C;
+  }
+  .el-input__icon{
+    cursor: pointer;
+  }
+</style>

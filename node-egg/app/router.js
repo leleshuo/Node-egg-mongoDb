@@ -4,6 +4,6 @@
  * @param {Egg.Application} app - egg application
  */
 module.exports = (app) => {
-  const { router, controller } = app
-  router.get('/', controller.admin.login.index)
+  require('./router/admin')(app)
+  require('./router/default')(app)
 }
