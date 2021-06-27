@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{a7537b55-21e2-43ef-9df4-053a5d0c33ed}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>.autod.conf.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="jsconfig.json" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include=".autod.conf.js" />
+    <Content Include="app\router.js" />
+    <Content Include="config\config.default.js" />
+    <Content Include="config\plugin.js" />
+    <Content Include="run\agent_config.json" />
+    <Content Include="run\agent_config_meta.json" />
+    <Content Include="run\agent_timing_3984.json" />
+    <Content Include="run\application_config.json" />
+    <Content Include="run\application_config_meta.json" />
+    <Content Include="run\application_timing_21392.json" />
+    <Content Include="run\application_timing_30784.json" />
+    <Content Include="run\router.json" />
+    <Content Include="app\controller\home.js" />
+    <Content Include="app\middleware\compress.js" />
+    <Content Include="app\middleware\jwt.js" />
+    <Content Include="app\model\admin.js" />
+    <Content Include="app\model\user.js" />
+    <Content Include="app\router\admin.js" />
+    <Content Include="app\router\default.js" />
+    <Content Include="app\service\cookies.js" />
+    <Content Include="app\service\tool.js" />
+    <Content Include="app\service\user.js" />
+    <Content Include="app\controller\admin\base.js" />
+    <Content Include="app\controller\admin\login.js" />
+    <Content Include="app\controller\default\pass.js" />
+    <Content Include="app\public\admin\css\cbb.css" />
+    <Content Include="app\public\admin\css\common.css" />
+    <Content Include="app\public\admin\css\five.css" />
+    <Content Include="app\public\admin\css\index.css" />
+    <Content Include="app\public\admin\css\second.css" />
+    <Content Include="app\public\admin\css\third.css" />
+    <Content Include="app\public\admin\images\login-background.png" />
+    <Content Include="app\public\admin\images\login_bg.png" />
+    <Content Include="app\public\admin\images\loginbg.jpg" />
+    <Content Include="app\public\admin\images\login_btn.jpg" />
+    <Content Include="app\public\admin\images\node.jpg" />
+    <Content Include="app\public\admin\images\user.svg" />
+    <Content Include="app\public\admin\js\jsencode.js" />
+    <Content Include="app\public\admin\js\jsencrypt.js" />
+    <Content Include="app\public\admin\js\request.js" />
+    <Content Include="app\public\admin\js\vue.js" />
+    <Content Include="app\view\admin\index.html" />
+    <Content Include="app\view\admin\login.html" />
+    <Content Include="app\view\admin\register.html" />
+    <Content Include="app\view\admin\public\support.html" />
+    <Content Include="test\app\controller\home.test.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app" />
+    <Folder Include="app\controller" />
+    <Folder Include="app\controller\admin" />
+    <Folder Include="app\controller\default" />
+    <Folder Include="app\middleware" />
+    <Folder Include="app\model" />
+    <Folder Include="app\public" />
+    <Folder Include="app\public\admin" />
+    <Folder Include="app\public\admin\css" />
+    <Folder Include="app\public\admin\images" />
+    <Folder Include="app\public\admin\js" />
+    <Folder Include="app\public\article" />
+    <Folder Include="app\router" />
+    <Folder Include="app\service" />
+    <Folder Include="app\view" />
+    <Folder Include="app\view\admin" />
+    <Folder Include="app\view\admin\public" />
+    <Folder Include="app\view\article" />
+    <Folder Include="config" />
+    <Folder Include="logs" />
+    <Folder Include="logs\node-egg" />
+    <Folder Include="run" />
+    <Folder Include="test" />
+    <Folder Include="test\app" />
+    <Folder Include="test\app\controller" />
+    <Folder Include="typings" />
+    <Folder Include="typings\app" />
+    <Folder Include="typings\app\controller" />
+    <Folder Include="typings\app\middleware" />
+    <Folder Include="typings\app\model" />
+    <Folder Include="typings\app\service" />
+    <Folder Include="typings\config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

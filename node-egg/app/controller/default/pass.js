@@ -1,6 +1,7 @@
 'use strict'
 //  In fact, we don't need a step-by-step strategy in registration
 const Controller = require('egg').Controller
+let jwt = require('jsonwebtoken');
 class PassController extends Controller {
   // 登录
   async login() {
@@ -11,50 +12,30 @@ class PassController extends Controller {
       returnUrl: returnUrl,
     })
   }
-  async doLogin() {
+  async doLogin() { //登录时查询手机号，如果手机号不存在则注册
     const username = this.ctx.request.body.username
-    let password = this.ctx.request.body.password
-    // const identify_code = this.ctx.request.body.identify_code
+    const password = this.ctx.request.body.password
+    console.log(this.ctx.request.body)
+    let msg ='成功',code = 0
+    const userInfo = new this.ctx.model.User({ username, password});
+    const userResult = await this.ctx.model.User.find({ username:username})
+    if(userResult.length == 0){ //代表用户不存在，则进行注册
+        msg = '注册'
+        code = 1
+      let save = await userInfo.save()
+    }else if(userResult.length > 1){ //用户已存在则进行登录
+      msg = '用户名已存在'
+      code = 2
+      this.service.cookies.set('userinfo', userResult[0])
+    }
+    var token = jwt.sign({ username: userResult[0].username }, 'leleshuo-boke-jwt',{
+      expiresIn:60
+      });
     this.ctx.body = {
           success: false,
-          msg: {
-            username:this.ctx.request.body.username,
-            password:this.ctx.request.body.password
-          },
-        }
-    // if (identify_code != this.ctx.session.identify_code) {
-    //   // 重新生成验证码 为了安全
-    //   var captcha = await this.service.tools.captcha(120, 50)
-    //   this.ctx.session.identify_code = captcha.text
-
-    //   this.ctx.body = {
-    //     success: false,
-    //     msg: '输入的图形验证码不正确',
-    //   }
-    // } else {
-    //   password = await this.service.tools.md5(password)
-    //   const userResult = await this.ctx.model.User.find(
-    //     { phone: username, password },
-    //     '_id phone last_ip add_time email status'
-    //   )
-    //   if (userResult.length) {
-    //     // cookies 安全      加密
-    //     this.service.cookies.set('userinfo', userResult[0])
-    //     this.ctx.body = {
-    //       success: true,
-    //       msg: '登录成功',
-    //     }
-    //   } else {
-    //     // 重新生成验证码
-    //     var captcha = await this.service.tools.captcha(120, 50)
-    //     this.ctx.session.identify_code = captcha.text
-
-    //     this.ctx.body = {
-    //       success: false,
-    //       msg: '用户名或者密码错误',
-    //     }
-    //   }
-    // }
+          code:code,
+          msg:{msg,token:token}
+    }
   }
   // 退出登录
   async loginOut() {

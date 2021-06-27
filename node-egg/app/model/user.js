@@ -1,7 +1,7 @@
-module.exports = app => {
-  const mongoose = app.mongoose;
-  const Schema = mongoose.Schema;
-  const d = new Date();
+module.exports = (app) => {
+  const mongoose = app.mongoose
+  const Schema = mongoose.Schema
+  const d = new Date()
   const User = new Schema({
     password: { type: String },
     phone: { type: Number },
@@ -18,7 +18,10 @@ module.exports = app => {
       type: Number,
       default: d.getTime(),
     },
-  });
+    username: {
+      type: String,
+    },
+  })
 
-  return mongoose.model('User', User, 'user');
-};
+  return mongoose.model('User', User, 'user')
+}

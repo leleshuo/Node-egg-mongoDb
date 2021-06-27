@@ -14,9 +14,17 @@ module.exports = (appInfo) => {
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1618880198225_655'
+ 
 
   // add your middleware config here
-  config.middleware = []
+//   config.middleware = ['compress','jwt']
+//   config.jwt = {
+//     secret: 'leleshuo-boke-jwt',
+// };
+    // config.compress = {
+    //   threshold:1024
+    // }
+   // 配置需要的中间件，数组顺序即为中间件的加载顺序
   exports.security = {
     csrf: {
       // 判断是否需要 ignore 的方法，请求上下文 context 作为第一个参数
@@ -36,9 +44,17 @@ module.exports = (appInfo) => {
 
   exports.mongoose = {
     client: {
-      url: 'mongodb://127.0.0.1/bokeMaster',
+      // url: 'mongodb://127.0.0.1/bokeMaster',
+      url:"mongodb://user49872485:*****@dds-bp1qtvg12uc1bp04-pub.mongodb.rds.aliyuncs.com:3717/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false",
+      // port:"3717",
+      // name:"boke",
+      // user:"user49872485",
+      // password:"Q2g3h4f7!@iu90_1",
       options: {
         useNewUrlParser: true,
+        auto_reconnect: true,
+        user:'user49872485',
+        pass:'Q2g3h4f7!@iu90_1'
       },
     },
   }
